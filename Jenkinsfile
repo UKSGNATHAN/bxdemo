@@ -8,8 +8,9 @@ pipeline{
 	    steps{
             echo "Building latest code"
         }
-    }
-        stage('Deploy to Feature') {
+    }   
+	//Deploy to Nexus artifact for feature branch
+        stage('Deploy to Nexus artifact') {
             when {
                 branch 'feature/*'
             }
