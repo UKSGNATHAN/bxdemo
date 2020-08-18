@@ -1,7 +1,8 @@
 pipeline{
     agent any 
     stages{
-        stage('Build'){
+        stage('Build'){ 
+	  steps{
             echo "Building latest code"
         }
     }
@@ -37,4 +38,5 @@ pipeline{
                 echo "Deploying to Prod env"
             }
         }
+}
 }
