@@ -1,8 +1,11 @@
 pipeline{
     agent any 
     stages{
-        stage('Build'){ 
-	  steps{
+        stage('Build'){
+	    when {
+	        branch 'feature/*'
+	       }
+	    steps{
             echo "Building latest code"
         }
     }
