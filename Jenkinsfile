@@ -4,10 +4,10 @@ pipeline{
             buildDiscarder(logRotator(
                 // number of Builds to Keep 
                 numToKeepStr:  env.BRANCH_NAME ==~ /master|develop/ ? '3': 
-                               env.BRANCH_NAME ==~ /(feature|bugfix|staging|release|hotfix)\/.*/ ? '20' : '5', 
+                               env.BRANCH_NAME ==~ /(feature|bugfix|staging|release|hotfix)\/.*/ ? '4', 
                 // number of builds to keep the artifacts from                
                 artifactNumToKeepStr:  env.BRANCH_NAME ==~ /master|develop/ ? '3':
-                               env.BRANCH_NAME ==~ /(feature|bugfix|staging|release|hotfix)\/.*/ ? '20' : '5'
+                               env.BRANCH_NAME ==~ /(feature|bugfix|staging|release|hotfix)\/.*/ ? '4'
                                 ))
     } 
     stages{
