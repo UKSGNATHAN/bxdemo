@@ -46,7 +46,7 @@ pipeline{
         stage('Deploy to Prod'){
             when {
                  expression {
-                return env.BRANCH_NAME == /master|development/ ?;
+                return env.BRANCH_NAME == /master|development/ ;
                  }
             }
             steps {
