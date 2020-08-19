@@ -6,7 +6,7 @@ pipeline{
                 numToKeepStr:  env.BRANCH_NAME ==~ /master|develop/ ? '3': 
                                env.BRANCH_NAME ==~ /(feature|bugfix|staging|release|hotfix)\/.*/ ? '20' : '5', 
                 // number of builds to keep the artifacts from                
-                artifactNumToKeepStr:  env.BRANCH_NAME ==~ /master|develop/ ? '3':
+                artifactNumToKeepStr:  env.BRANCH_NAME ==~ /master/develop/ ? '3':
                                env.BRANCH_NAME ==~ /(feature|bugfix|staging|release|hotfix)\/.*/ ? '20' : '5'
                                 ))
     } 
@@ -17,7 +17,6 @@ pipeline{
                 branch 'feature/*'
             }
         }
-    }
         stage('Deploy to Feature') {
             when {
                 branch 'feature/*'
@@ -50,4 +49,5 @@ pipeline{
                 echo "Deploying to Prod env"
             }
         }
+}
 }
