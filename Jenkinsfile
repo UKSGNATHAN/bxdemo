@@ -27,7 +27,9 @@ pipeline{
         }
         stage('Deploy to staging'){
             when {
-                branch 'staging'
+		    expression {
+			    return  env.BRANCH_NAME = staging;
+		 }
             }
             steps{
                 echo "Deploying to staging env"
