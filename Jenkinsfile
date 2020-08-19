@@ -12,9 +12,11 @@ pipeline{
     } 
     stages{
         stage('Build'){
-            echo "Building latest code"
             when {
                 branch 'feature/*'
+            }
+            steps {
+                echo "Building latest code"
             }
         }
         stage('Deploy to Feature') {
